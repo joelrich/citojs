@@ -535,10 +535,8 @@ var cito = window.cito || {};
         if (isWebKit) {
             helperDiv.innerText = value;
             value = helperDiv.innerHTML;
-        } else if (isFirefox) {
-            value = value.split('<').join('&lt;').split('>').join('&gt;').split('&').join('&amp;');
         } else {
-            value = value.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/&/g, '&amp;');
+            value = value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         }
         return value;
     }
