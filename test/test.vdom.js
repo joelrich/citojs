@@ -12,7 +12,7 @@ describe('cito.vdom', function () {
     // TODO generate extensive test data automatically
 
     var domDefs = {
-        'attrs div': [
+        'attrs div':            [
             {
                 name: 'none',
                 node: {tag: 'div'},
@@ -59,7 +59,7 @@ describe('cito.vdom', function () {
                 html: '<div data-attr="attr1"></div>'
             }
         ],
-        'attrs input': [
+        'attrs input':          [
             {
                 name: 'empty',
                 node: {tag: 'input'},
@@ -76,7 +76,7 @@ describe('cito.vdom', function () {
                 html: '<input required>'
             }
         ],
-        'general': [
+        'general':              [
             {
                 name: 'children none',
                 node: {tag: 'div'},
@@ -118,7 +118,7 @@ describe('cito.vdom', function () {
                 html: '<div><ul><li>t1</li><li>t2</li></ul><ul><li>t0</li></ul></div>'
             }
         ],
-        'text': [
+        'text':                 [
             {
                 name: 'text empty',
                 node: {
@@ -223,7 +223,7 @@ describe('cito.vdom', function () {
                 html: '<div>t1t0</div>'
             }
         ],
-        'escaping': [
+        'escaping':             [
             {
                 name: 'attr',
                 node: {tag: 'div', attrs: {title: '\"&'}},
@@ -235,7 +235,7 @@ describe('cito.vdom', function () {
                 html: '<div>&lt;&amp;&gt;</div>'
             }
         ],
-        'comments': [
+        'comments':             [
             {
                 name: 'comment 1',
                 node: {tag: 'div', children: {tag: '!', children: 'comment 1'}},
@@ -247,7 +247,7 @@ describe('cito.vdom', function () {
                 html: '<div><!--comment 2--></div>'
             }
         ],
-        'html': [
+        'html':                 [
             {
                 name: 'html empty',
                 node: {
@@ -367,11 +367,11 @@ describe('cito.vdom', function () {
                 html: '<div>t0<b>t1</b>ht2</div>'
             }
         ],
-        'lists': [
+        'lists':                [
             {
                 name: 'empty',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: []
                 },
                 html: '<ul></ul>'
@@ -379,7 +379,7 @@ describe('cito.vdom', function () {
             {
                 name: '2 li',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', children: ['t0']},
                         {tag: 'li', children: ['t', '1']}
@@ -390,7 +390,7 @@ describe('cito.vdom', function () {
             {
                 name: '3 li',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', children: ['t', '0']},
                         {tag: 'li', children: ['t1']},
@@ -402,7 +402,7 @@ describe('cito.vdom', function () {
             {
                 name: '5 li',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', children: ['t0']},
                         {tag: 'li', children: ['t1']},
@@ -414,11 +414,11 @@ describe('cito.vdom', function () {
                 html: '<ul><li>t0</li><li>t1</li><li>t2</li><li>t3</li><li>t4</li></ul>'
             }
         ],
-        'keyed lists': [
+        'keyed lists':          [
             {
                 name: '0',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [{tag: 'li', key: 0, children: ['t0']}]
                 },
                 html: '<ul><li>t0</li></ul>'
@@ -426,7 +426,7 @@ describe('cito.vdom', function () {
             {
                 name: '1',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [{tag: 'li', key: 1, children: ['t1']}]
                 },
                 html: '<ul><li>t1</li></ul>'
@@ -434,7 +434,7 @@ describe('cito.vdom', function () {
             {
                 name: '2',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [{tag: 'li', key: 2, children: ['t2']}]
                 },
                 html: '<ul><li>t2</li></ul>'
@@ -442,7 +442,7 @@ describe('cito.vdom', function () {
             {
                 name: '9',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [{tag: 'li', key: 9, children: ['t9']}]
                 },
                 html: '<ul><li>t9</li></ul>'
@@ -450,7 +450,7 @@ describe('cito.vdom', function () {
             {
                 name: '0-1-2',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', key: 0, children: ['t0']},
                         {tag: 'li', key: 1, children: ['t1']},
@@ -462,7 +462,7 @@ describe('cito.vdom', function () {
             {
                 name: '1-0-2',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', key: 1, children: ['t1']},
                         {tag: 'li', key: 0, children: ['t0']},
@@ -474,7 +474,7 @@ describe('cito.vdom', function () {
             {
                 name: '0-2-1',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', key: 0, children: ['t0']},
                         {tag: 'li', key: 2, children: ['t2']},
@@ -486,7 +486,7 @@ describe('cito.vdom', function () {
             {
                 name: '1-2',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', key: 1, children: ['t1']},
                         {tag: 'li', key: 2, children: ['t2']}
@@ -497,7 +497,7 @@ describe('cito.vdom', function () {
             {
                 name: '0-1',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', key: 0, children: ['t0']},
                         {tag: 'li', key: 1, children: ['t1']}
@@ -508,7 +508,7 @@ describe('cito.vdom', function () {
             {
                 name: '0-1-2-3-4',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', key: 0, children: ['t0']},
                         {tag: 'li', key: 1, children: ['t1']},
@@ -522,7 +522,7 @@ describe('cito.vdom', function () {
             {
                 name: '4-3-2-1-0',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', key: 4, children: ['t4']},
                         {tag: 'li', key: 3, children: ['t3']},
@@ -536,7 +536,7 @@ describe('cito.vdom', function () {
             {
                 name: '2-1-4-0-3',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', key: 2, children: ['t2']},
                         {tag: 'li', key: 1, children: ['t1']},
@@ -550,7 +550,7 @@ describe('cito.vdom', function () {
             {
                 name: '4-1-2',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', key: 4, children: ['t4']},
                         {tag: 'li', key: 1, children: ['t1']},
@@ -562,7 +562,7 @@ describe('cito.vdom', function () {
             {
                 name: '0-4',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', key: 0, children: ['t0']},
                         {tag: 'li', key: 4, children: ['t4']}
@@ -573,7 +573,7 @@ describe('cito.vdom', function () {
             {
                 name: '0-5-4',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', key: 0, children: ['t0']},
                         {tag: 'li', key: 5, children: ['t5']},
@@ -585,7 +585,7 @@ describe('cito.vdom', function () {
             {
                 name: '0-5-6-4',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
                         {tag: 'li', key: 0, children: ['t0']},
                         {tag: 'li', key: 6, children: ['t6']},
@@ -596,11 +596,11 @@ describe('cito.vdom', function () {
                 html: '<ul><li>t0</li><li>t6</li><li>t5</li><li>t4</li></ul>'
             }
         ],
-        'keyed html': [
+        'keyed html':           [
             {
                 name: '0',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: [
                         {tag: '<', key: 0, children: '<b>t0.0</b><b>t0.1</b>'}
                     ]
@@ -610,7 +610,7 @@ describe('cito.vdom', function () {
             {
                 name: '1',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: [
                         {tag: '<', key: 1, children: '<b>t1.0</b><b>t1.1</b>'}
                     ]
@@ -620,7 +620,7 @@ describe('cito.vdom', function () {
             {
                 name: '0-1',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: [
                         {tag: '<', key: 0, children: '<b>t0.0</b><b>t0.1</b>'},
                         {tag: '<', key: 1, children: '<b>t1.0</b><b>t1.1</b>'}
@@ -631,7 +631,7 @@ describe('cito.vdom', function () {
             {
                 name: '1-0',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: [
                         {tag: '<', key: 1, children: '<b>t1.0</b><b>t1.1</b>'},
                         {tag: '<', key: 0, children: '<b>t0.0</b><b>t0.1</b>'}
@@ -640,7 +640,7 @@ describe('cito.vdom', function () {
                 html: '<div><b>t1.0</b><b>t1.1</b><b>t0.0</b><b>t0.1</b></div>'
             }
         ],
-        'style': [
+        'style':                [
             {
                 name: 'none',
                 node: {tag: 'div'},
@@ -687,7 +687,7 @@ describe('cito.vdom', function () {
                 html: '<div style="color: red !important;"></div>'
             }
         ],
-        'simple fragments': [
+        'simple fragments':     [
             {
                 name: 'fragment without children',
                 node: {tag: 'div', children: {}},
@@ -723,7 +723,7 @@ describe('cito.vdom', function () {
             {
                 name: 'div + empty fragment',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: [
                         {tag: 'div', children: 't0'},
                         {
@@ -736,7 +736,7 @@ describe('cito.vdom', function () {
             {
                 name: 'div + fragment with 2 div',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: [
                         {tag: 'div', children: 't0'},
                         {
@@ -752,7 +752,7 @@ describe('cito.vdom', function () {
             {
                 name: 'fragment with 2 div + div',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: [
                         {
                             children: [
@@ -768,7 +768,7 @@ describe('cito.vdom', function () {
             {
                 name: 'fragment with 2 div',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: [
                         {
                             children: [
@@ -783,7 +783,7 @@ describe('cito.vdom', function () {
             {
                 name: 'div + fragment with 3 div',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: [
                         {tag: 'div', children: 't0'},
                         {
@@ -800,7 +800,7 @@ describe('cito.vdom', function () {
             {
                 name: 'div + fragment with 2 div + div',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: [
                         {tag: 'div', children: 't0'},
                         {
@@ -817,7 +817,7 @@ describe('cito.vdom', function () {
             {
                 name: 'div + empty fragment + div',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: [
                         {tag: 'div', children: 't0'},
                         {
@@ -831,7 +831,7 @@ describe('cito.vdom', function () {
             {
                 name: 'div + fragment with text + div',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: [
                         {tag: 'div', children: 't0'},
                         {
@@ -845,7 +845,7 @@ describe('cito.vdom', function () {
             {
                 name: 'div + fragment with html + div',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: [
                         {tag: 'div', children: 't0'},
                         {
@@ -857,13 +857,13 @@ describe('cito.vdom', function () {
                 html: '<div><div>t0</div><b>t1</b><div>t3</div></div>'
             }
         ],
-        'keyed fragments': [
+        'keyed fragments':      [
             {
                 name: '0',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
-                        {key: 0, children: [{tag: 'li', children: 't0.0'},{tag: 'li', children: 't0.1'}]}
+                        {key: 0, children: [{tag: 'li', children: 't0.0'}, {tag: 'li', children: 't0.1'}]}
                     ]
                 },
                 html: '<ul><li>t0.0</li><li>t0.1</li></ul>'
@@ -871,10 +871,10 @@ describe('cito.vdom', function () {
             {
                 name: '0-1',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
-                        {key: 0, children: [{tag: 'li', children: 't0.0'},{tag: 'li', children: 't0.1'}]},
-                        {key: 1, children: [{tag: 'li', children: 't1.0'},{tag: 'li', children: 't1.1'}]}
+                        {key: 0, children: [{tag: 'li', children: 't0.0'}, {tag: 'li', children: 't0.1'}]},
+                        {key: 1, children: [{tag: 'li', children: 't1.0'}, {tag: 'li', children: 't1.1'}]}
                     ]
                 },
                 html: '<ul><li>t0.0</li><li>t0.1</li><li>t1.0</li><li>t1.1</li></ul>'
@@ -882,10 +882,10 @@ describe('cito.vdom', function () {
             {
                 name: '1-0',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
-                        {key: 1, children: [{tag: 'li', children: 't1.0'},{tag: 'li', children: 't1.1'}]},
-                        {key: 0, children: [{tag: 'li', children: 't0.0'},{tag: 'li', children: 't0.1'}]}
+                        {key: 1, children: [{tag: 'li', children: 't1.0'}, {tag: 'li', children: 't1.1'}]},
+                        {key: 0, children: [{tag: 'li', children: 't0.0'}, {tag: 'li', children: 't0.1'}]}
                     ]
                 },
                 html: '<ul><li>t1.0</li><li>t1.1</li><li>t0.0</li><li>t0.1</li></ul>'
@@ -893,9 +893,9 @@ describe('cito.vdom', function () {
             {
                 name: '1',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
-                        {key: 1, children: [{tag: 'li', children: 't1.0'},{tag: 'li', children: 't1.1'}]}
+                        {key: 1, children: [{tag: 'li', children: 't1.0'}, {tag: 'li', children: 't1.1'}]}
                     ]
                 },
                 html: '<ul><li>t1.0</li><li>t1.1</li></ul>'
@@ -903,11 +903,11 @@ describe('cito.vdom', function () {
             {
                 name: '0-1-2',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
-                        {key: 0, children: [{tag: 'li', children: 't0.0'},{tag: 'li', children: 't0.1'}]},
-                        {key: 1, children: [{tag: 'li', children: 't1.0'},{tag: 'li', children: 't1.1'}]},
-                        {key: 2, children: [{tag: 'li', children: 't2.0'},{tag: 'li', children: 't2.1'}]}
+                        {key: 0, children: [{tag: 'li', children: 't0.0'}, {tag: 'li', children: 't0.1'}]},
+                        {key: 1, children: [{tag: 'li', children: 't1.0'}, {tag: 'li', children: 't1.1'}]},
+                        {key: 2, children: [{tag: 'li', children: 't2.0'}, {tag: 'li', children: 't2.1'}]}
                     ]
                 },
                 html: '<ul><li>t0.0</li><li>t0.1</li><li>t1.0</li><li>t1.1</li><li>t2.0</li><li>t2.1</li></ul>'
@@ -915,11 +915,11 @@ describe('cito.vdom', function () {
             {
                 name: '2-1-0',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
-                        {key: 2, children: [{tag: 'li', children: 't2.0'},{tag: 'li', children: 't2.1'}]},
-                        {key: 1, children: [{tag: 'li', children: 't1.0'},{tag: 'li', children: 't1.1'}]},
-                        {key: 0, children: [{tag: 'li', children: 't0.0'},{tag: 'li', children: 't0.1'}]}
+                        {key: 2, children: [{tag: 'li', children: 't2.0'}, {tag: 'li', children: 't2.1'}]},
+                        {key: 1, children: [{tag: 'li', children: 't1.0'}, {tag: 'li', children: 't1.1'}]},
+                        {key: 0, children: [{tag: 'li', children: 't0.0'}, {tag: 'li', children: 't0.1'}]}
                     ]
                 },
                 html: '<ul><li>t2.0</li><li>t2.1</li><li>t1.0</li><li>t1.1</li><li>t0.0</li><li>t0.1</li></ul>'
@@ -927,10 +927,10 @@ describe('cito.vdom', function () {
             {
                 name: '0-2',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
-                        {key: 0, children: [{tag: 'li', children: 't0.0'},{tag: 'li', children: 't0.1'}]},
-                        {key: 2, children: [{tag: 'li', children: 't2.0'},{tag: 'li', children: 't2.1'}]}
+                        {key: 0, children: [{tag: 'li', children: 't0.0'}, {tag: 'li', children: 't0.1'}]},
+                        {key: 2, children: [{tag: 'li', children: 't2.0'}, {tag: 'li', children: 't2.1'}]}
                     ]
                 },
                 html: '<ul><li>t0.0</li><li>t0.1</li><li>t2.0</li><li>t2.1</li></ul>'
@@ -938,20 +938,20 @@ describe('cito.vdom', function () {
             {
                 name: '2-0',
                 node: {
-                    tag: 'ul',
+                    tag:      'ul',
                     children: [
-                        {key: 2, children: [{tag: 'li', children: 't2.0'},{tag: 'li', children: 't2.1'}]},
-                        {key: 0, children: [{tag: 'li', children: 't0.0'},{tag: 'li', children: 't0.1'}]}
+                        {key: 2, children: [{tag: 'li', children: 't2.0'}, {tag: 'li', children: 't2.1'}]},
+                        {key: 0, children: [{tag: 'li', children: 't0.0'}, {tag: 'li', children: 't0.1'}]}
                     ]
                 },
                 html: '<ul><li>t2.0</li><li>t2.1</li><li>t0.0</li><li>t0.1</li></ul>'
             }
         ],
-        'nested fragments': [
+        'nested fragments':     [
             {
                 name: 'fragment > text',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: {children: {children: 't0'}}
                 },
                 html: '<div>t0</div>'
@@ -959,7 +959,7 @@ describe('cito.vdom', function () {
             {
                 name: 'fragment > div',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: {children: {tag: 'div', children: 't0'}}
                 },
                 html: '<div><div>t0</div></div>'
@@ -967,7 +967,7 @@ describe('cito.vdom', function () {
             {
                 name: 'fragment > fragment > text',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: {children: {children: 't00'}}
                 },
                 html: '<div>t00</div>'
@@ -975,7 +975,7 @@ describe('cito.vdom', function () {
             {
                 name: 'fragment > fragment > text + text',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: {children: {children: ['t00', 't01']}}
                 },
                 html: '<div>t00t01</div>'
@@ -983,7 +983,7 @@ describe('cito.vdom', function () {
             {
                 name: 'fragment > fragment > html',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: {children: {children: {tag: '<', children: '<b>t00</b>'}}}
 
                 },
@@ -992,7 +992,7 @@ describe('cito.vdom', function () {
             {
                 name: 'fragment > fragment > div',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: {children: {children: {tag: 'div', children: 't00'}}}
                 },
                 html: '<div><div>t00</div></div>'
@@ -1000,7 +1000,7 @@ describe('cito.vdom', function () {
             {
                 name: 'fragment > fragment > div + div',
                 node: {
-                    tag: 'div',
+                    tag:      'div',
                     children: {children: {children: [{tag: 'div', children: 't00'}, {tag: 'div', children: 't01'}]}}
                 },
                 html: '<div><div>t00</div><div>t01</div></div>'
@@ -1009,158 +1009,158 @@ describe('cito.vdom', function () {
     };
 
     /*
-    function immediatePromise(valueCallback) {
-        return {then: function (thenCallback) {
-            thenCallback(valueCallback());
-        }};
-    }
+     function immediatePromise(valueCallback) {
+     return {then: function (thenCallback) {
+     thenCallback(valueCallback());
+     }};
+     }
 
-    function timeoutPromise(valueCallback) {
-        return {then: function (thenCallback) {
-            window.setTimeout(function () {
-                thenCallback(valueCallback());
-            }, 0);
-        }};
-    }
+     function timeoutPromise(valueCallback) {
+     return {then: function (thenCallback) {
+     window.setTimeout(function () {
+     thenCallback(valueCallback());
+     }, 0);
+     }};
+     }
 
-    domDefs['promise'] = [
-        {
-            name: 'children immediate',
-            node: {
-                tag: 'ul', children: immediatePromise(function () {
-                    return [
-                        {tag: 'li', children: 't0'}
-                    ]
-                })
-            },
-            html: '<ul><li>t0</li></ul>',
-            htmlDelayed: '<ul><li>t0</li></ul>'
-        },
-        {
-            name: 'children timeout',
-            node: {
-                tag: 'ul', children: timeoutPromise(function () {
-                    return [
-                        {tag: 'li', children: 't0'}
-                    ]
-                })
-            },
-            html: '<ul></ul>',
-            htmlDelayed: '<ul><li>t0</li></ul>'
-        },
-        {
-            name: 'child immediate',
-            node: {
-                tag: 'ul', children: [
-                    immediatePromise(function () {
-                        return {tag: 'li', children: 't0'};
-                    })
-                ]
-            },
-            html: '<ul><li>t0</li></ul>',
-            htmlDelayed: '<ul><li>t0</li></ul>'
-        },
-        {
-            name: 'child timeout',
-            node: {
-                tag: 'ul', children: [
-                    timeoutPromise(function () {
-                        return {tag: 'li', children: 't0'};
-                    })
-                ]
-            },
-            html: '<ul></ul>',
-            htmlDelayed: '<ul><li>t0</li></ul>'
-        },
-        {
-            name: 'child immediate before',
-            node: {
-                tag: 'ul', children: [
-                    immediatePromise(function () {
-                        return {tag: 'li', children: 't0'}
-                    }),
-                    {tag: 'li', children: 't1'}
-                ]
-            },
-            html: '<ul><li>t0</li><li>t1</li></ul>',
-            htmlDelayed: '<ul><li>t0</li><li>t1</li></ul>'
-        },
-        {
-            name: 'child timeout before',
-            node: {
-                tag: 'ul', children: [
-                    timeoutPromise(function () {
-                        return {tag: 'li', children: 't0'}
-                    }),
-                    {tag: 'li', children: 't1'}
-                ]
-            },
-            html: '<ul><li>t1</li></ul>',
-            htmlDelayed: '<ul><li>t0</li><li>t1</li></ul>'
-        },
-        {
-            name: 'child immediate after',
-            node: {
-                tag: 'ul', children: [
-                    {tag: 'li', children: 't0'},
-                    immediatePromise(function () {
-                        return {tag: 'li', children: 't1'}
-                    })
-                ]
-            },
-            html: '<ul><li>t0</li><li>t1</li></ul>',
-            htmlDelayed: '<ul><li>t0</li><li>t1</li></ul>'
-        },
-        {
-            name: 'child timeout after',
-            node: {
-                tag: 'ul', children: [
-                    {tag: 'li', children: 't0'},
-                    timeoutPromise(function () {
-                        return {tag: 'li', children: 't1'}
-                    })
-                ]
-            },
-            html: '<ul><li>t0</li></ul>',
-            htmlDelayed: '<ul><li>t0</li><li>t1</li></ul>'
-        },
-        {
-            name: 'two children timeout',
-            node: {
-                tag: 'ul', children: [
-                    timeoutPromise(function () {
-                        return {tag: 'li', children: 't0'}
-                    }),
-                    timeoutPromise(function () {
-                        return {tag: 'li', children: 't1'}
-                    })
-                ]
-            },
-            html: '<ul></ul>',
-            htmlDelayed: '<ul><li>t0</li><li>t1</li></ul>'
-        },
-        {
-            name: 'wrapped child timeout',
-            node: {
-                tag: 'div',
-                children: [
-                    {
-                        tag: 'ul', children: [
-                        timeoutPromise(function () {
-                            return {tag: 'li', children: 't0'}
-                        })
-                    ]
-                    }
-                ]
-            },
-            html: '<div><ul></ul></div>',
-            htmlDelayed: '<div><ul><li>t0</li></ul></div>'
-        }
-    ];
-    */
+     domDefs['promise'] = [
+     {
+     name: 'children immediate',
+     node: {
+     tag: 'ul', children: immediatePromise(function () {
+     return [
+     {tag: 'li', children: 't0'}
+     ]
+     })
+     },
+     html: '<ul><li>t0</li></ul>',
+     htmlDelayed: '<ul><li>t0</li></ul>'
+     },
+     {
+     name: 'children timeout',
+     node: {
+     tag: 'ul', children: timeoutPromise(function () {
+     return [
+     {tag: 'li', children: 't0'}
+     ]
+     })
+     },
+     html: '<ul></ul>',
+     htmlDelayed: '<ul><li>t0</li></ul>'
+     },
+     {
+     name: 'child immediate',
+     node: {
+     tag: 'ul', children: [
+     immediatePromise(function () {
+     return {tag: 'li', children: 't0'};
+     })
+     ]
+     },
+     html: '<ul><li>t0</li></ul>',
+     htmlDelayed: '<ul><li>t0</li></ul>'
+     },
+     {
+     name: 'child timeout',
+     node: {
+     tag: 'ul', children: [
+     timeoutPromise(function () {
+     return {tag: 'li', children: 't0'};
+     })
+     ]
+     },
+     html: '<ul></ul>',
+     htmlDelayed: '<ul><li>t0</li></ul>'
+     },
+     {
+     name: 'child immediate before',
+     node: {
+     tag: 'ul', children: [
+     immediatePromise(function () {
+     return {tag: 'li', children: 't0'}
+     }),
+     {tag: 'li', children: 't1'}
+     ]
+     },
+     html: '<ul><li>t0</li><li>t1</li></ul>',
+     htmlDelayed: '<ul><li>t0</li><li>t1</li></ul>'
+     },
+     {
+     name: 'child timeout before',
+     node: {
+     tag: 'ul', children: [
+     timeoutPromise(function () {
+     return {tag: 'li', children: 't0'}
+     }),
+     {tag: 'li', children: 't1'}
+     ]
+     },
+     html: '<ul><li>t1</li></ul>',
+     htmlDelayed: '<ul><li>t0</li><li>t1</li></ul>'
+     },
+     {
+     name: 'child immediate after',
+     node: {
+     tag: 'ul', children: [
+     {tag: 'li', children: 't0'},
+     immediatePromise(function () {
+     return {tag: 'li', children: 't1'}
+     })
+     ]
+     },
+     html: '<ul><li>t0</li><li>t1</li></ul>',
+     htmlDelayed: '<ul><li>t0</li><li>t1</li></ul>'
+     },
+     {
+     name: 'child timeout after',
+     node: {
+     tag: 'ul', children: [
+     {tag: 'li', children: 't0'},
+     timeoutPromise(function () {
+     return {tag: 'li', children: 't1'}
+     })
+     ]
+     },
+     html: '<ul><li>t0</li></ul>',
+     htmlDelayed: '<ul><li>t0</li><li>t1</li></ul>'
+     },
+     {
+     name: 'two children timeout',
+     node: {
+     tag: 'ul', children: [
+     timeoutPromise(function () {
+     return {tag: 'li', children: 't0'}
+     }),
+     timeoutPromise(function () {
+     return {tag: 'li', children: 't1'}
+     })
+     ]
+     },
+     html: '<ul></ul>',
+     htmlDelayed: '<ul><li>t0</li><li>t1</li></ul>'
+     },
+     {
+     name: 'wrapped child timeout',
+     node: {
+     tag: 'div',
+     children: [
+     {
+     tag: 'ul', children: [
+     timeoutPromise(function () {
+     return {tag: 'li', children: 't0'}
+     })
+     ]
+     }
+     ]
+     },
+     html: '<div><ul></ul></div>',
+     htmlDelayed: '<div><ul><li>t0</li></ul></div>'
+     }
+     ];
+     */
 
     var ulTwoLi = {
-        tag: 'ul',
+        tag:      'ul',
         children: [
             {tag: 'li', children: 't0'},
             {tag: 'li', children: 't1'}
@@ -1177,42 +1177,42 @@ describe('cito.vdom', function () {
     };
     domDefs['callback'] = [
         {
-            name: 'ul',
-            node: function (oldNode) {
+            name:     'ul',
+            node:     function (oldNode) {
                 callbackOldNodes && callbackOldNodes.push(oldNode);
                 return _.cloneDeep(ulTwoLi);
             },
-            html: '<ul><li>t0</li><li>t1</li></ul>',
+            html:     '<ul><li>t0</li><li>t1</li></ul>',
             oldNodes: [ulTwoLi]
         },
         {
-            name: 'ul children',
-            node: {
-                tag: 'ul',
+            name:     'ul children',
+            node:     {
+                tag:      'ul',
                 children: function (oldChildren) {
                     callbackOldNodes && callbackOldNodes.push(oldChildren);
                     return _.cloneDeep(twoLi);
                 }
             },
-            html: '<ul><li>t0</li><li>t1</li></ul>',
+            html:     '<ul><li>t0</li><li>t1</li></ul>',
             oldNodes: [twoLi]
         },
         {
-            name: 'ul li',
-            node: {
-                tag: 'ul',
+            name:     'ul li',
+            node:     {
+                tag:      'ul',
                 children: [liFunc, liFunc]
             },
-            html: '<ul><li>t</li><li>t</li></ul>',
+            html:     '<ul><li>t</li><li>t</li></ul>',
             oldNodes: [liFunc(), liFunc()]
         }
     ];
 
     domDefs['callback retain'] = [
         {
-            name: 'children',
-            node: {
-                tag: 'ul',
+            name:           'children',
+            node:           {
+                tag:      'ul',
                 children: function (oldChildren) {
                     if (!oldChildren) {
                         return [
@@ -1222,35 +1222,48 @@ describe('cito.vdom', function () {
                     }
                 }
             },
-            html: '<ul><li>t0</li><li>t1</li></ul>',
+            html:           '<ul><li>t0</li><li>t1</li></ul>',
             updateOnlySelf: true
         },
         {
-            name: 'child',
-            node: {
-                tag: 'ul',
+            name:           'child',
+            node:           {
+                tag:      'ul',
                 children: [
-                    function (oldChild) { if (!oldChild) return {tag: 'li', children: 't0'}}
+                    function (oldChild) {
+                        if (!oldChild) {
+                            return {tag: 'li', children: 't0'}
+                        }
+                    }
                 ]
             },
-            html: '<ul><li>t0</li></ul>',
+            html:           '<ul><li>t0</li></ul>',
             updateOnlySelf: true
         },
         {
-            name: 'two children',
-            node: {
-                tag: 'ul',
+            name:           'two children',
+            node:           {
+                tag:      'ul',
                 children: [
-                    function (oldChild) { if (!oldChild) return {tag: 'li', children: 't0'}},
-                    function (oldChild) { if (!oldChild) return {tag: 'li', children: 't1'}}
+                    function (oldChild) {
+                        if (!oldChild) {
+                            return {tag: 'li', children: 't0'}
+                        }
+                    },
+                    function (oldChild) {
+                        if (!oldChild) {
+                            return {tag: 'li', children: 't1'}
+                        }
+                    }
                 ]
             },
-            html: '<ul><li>t0</li><li>t1</li></ul>',
+            html:           '<ul><li>t0</li><li>t1</li></ul>',
             updateOnlySelf: true
         }
     ];
 
     var helperDiv = document.createElement('div');
+
     function supportsNamespace(tag) {
         helperDiv.innerHTML = '<' + tag + '>';
         var firstChild = helperDiv.firstChild;
@@ -1259,90 +1272,90 @@ describe('cito.vdom', function () {
 
     if (supportsNamespace('svg')) {
         var svgNamespaces = {
-            'http://www.w3.org/2000/svg': ['svg', 'a', 'circle'],
+            'http://www.w3.org/2000/svg':   ['svg', 'a', 'circle'],
             'http://www.w3.org/1999/xlink': ['xlink:href']
         };
         domDefs['svg'] = [
             {
-                name: 'link',
-                node: {
-                    tag: 'svg',
-                    attrs: {height: 20, width: 40},
+                name:       'link',
+                node:       {
+                    tag:      'svg',
+                    attrs:    {height: 20, width: 40},
                     children: {
-                        tag: 'a',
-                        attrs: {'xlink:href': 'http://link'},
+                        tag:      'a',
+                        attrs:    {'xlink:href': 'http://link'},
                         children: {tag: 'text', attrs: {x: 0, y: 0}, children: 'link'}
                     }
                 },
-                html: '<svg height="20" width="40"><a xlink:href="http://link"><text x="0" y="0">link</text></a></svg>',
+                html:       '<svg height="20" width="40"><a xlink:href="http://link"><text x="0" y="0">link</text></a></svg>',
                 namespaces: svgNamespaces
             },
             {
-                name: 'two links',
-                node: {
-                    tag: 'svg',
-                    attrs: {height: 20, width: 40},
+                name:       'two links',
+                node:       {
+                    tag:      'svg',
+                    attrs:    {height: 20, width: 40},
                     children: [
                         {
-                            tag: 'a',
-                            attrs: {'xlink:href': 'http://link1'},
+                            tag:      'a',
+                            attrs:    {'xlink:href': 'http://link1'},
                             children: {tag: 'text', attrs: {x: 0, y: 0}, children: 'link1'}
                         },
                         {
-                            tag: 'a',
-                            attrs: {'xlink:href': 'http://link2'},
+                            tag:      'a',
+                            attrs:    {'xlink:href': 'http://link2'},
                             children: {tag: 'text', attrs: {x: 0, y: 0}, children: 'link2'}
                         }
                     ]
                 },
-                html: '<svg height="20" width="40"><a xlink:href="http://link1"><text x="0" y="0">link1</text></a><a xlink:href="http://link2"><text x="0" y="0">link2</text></a></svg>',
+                html:       '<svg height="20" width="40"><a xlink:href="http://link1"><text x="0" y="0">link1</text></a><a xlink:href="http://link2"><text x="0" y="0">link2</text></a></svg>',
                 namespaces: svgNamespaces
             },
             {
-                name: 'circle',
-                node: {
-                    tag: 'svg',
-                    attrs: {height: 40, width: 40},
+                name:       'circle',
+                node:       {
+                    tag:      'svg',
+                    attrs:    {height: 40, width: 40},
                     children: {
-                        tag: 'circle',
+                        tag:   'circle',
                         attrs: {cx: 20, cy: 20, r: 10, stroke: 'black', 'stroke-width': 1, fill: 'red'}
                     }
                 },
-                html: '<svg height="40" width="40"><circle cx="20" cy="20" r="10" stroke="black" stroke-width="1" fill="red"></circle></svg>',
+                html:       '<svg height="40" width="40"><circle cx="20" cy="20" r="10" stroke="black" stroke-width="1" fill="red"></circle></svg>',
                 namespaces: svgNamespaces
             },
             {
-                name: 'wrapped circle',
-                node: {
-                    tag: 'div',
+                name:       'wrapped circle',
+                node:       {
+                    tag:      'div',
                     children: {
-                        tag: 'svg',
-                        attrs: {height: 40, width: 40},
+                        tag:      'svg',
+                        attrs:    {height: 40, width: 40},
                         children: {
-                            tag: 'circle',
+                            tag:   'circle',
                             attrs: {cx: 20, cy: 20, r: 10, stroke: 'black', 'stroke-width': 1, fill: 'red'}
                         }
                     }
                 },
-                html: '<div><svg height="40" width="40"><circle cx="20" cy="20" r="10" stroke="black" stroke-width="1" fill="red"></circle></svg></div>',
+                html:       '<div><svg height="40" width="40"><circle cx="20" cy="20" r="10" stroke="black" stroke-width="1" fill="red"></circle></svg></div>',
                 namespaces: svgNamespaces
             },
             {
-                name: 'circle fragment',
-                node: {
-                    tag: 'svg',
+                name:       'circle fragment',
+                node:       {
+                    tag:      'svg',
                     children: {children: [{tag: 'circle'}]}
                 },
-                html: '<svg><circle></circle></svg>',
+                html:       '<svg><circle></circle></svg>',
                 namespaces: svgNamespaces
             },
             {
-                name: 'two circles fragment',
-                node: {
-                    tag: 'svg',
+                name:       'two circles fragment',
+                node:       {
+                    tag:      'svg',
                     children: {children: [{tag: 'circle'}, {tag: 'circle'}]}
                 },
-                html: '<svg><circle></circle><circle></circle></svg>',
+                html:       '<svg><circle></circle><circle></circle></svg>',
                 namespaces: svgNamespaces
             }
         ];
@@ -1353,38 +1366,38 @@ describe('cito.vdom', function () {
         };
         domDefs['mathml'] = [
             {
-                name: 'a',
-                node: {
-                    tag: 'math',
+                name:       'a',
+                node:       {
+                    tag:      'math',
                     children: {tag: 'mi', children: 'a'}
                 },
-                html: '<math><mi>a</mi></math>',
+                html:       '<math><mi>a</mi></math>',
                 namespaces: mathmlNamespaces
             },
             {
-                name: 'a + b',
-                node: {
-                    tag: 'math',
+                name:       'a + b',
+                node:       {
+                    tag:      'math',
                     children: [
                         {tag: 'mi', children: 'a'},
                         {tag: 'mo', children: '+'},
                         {tag: 'mi', children: 'b'}
                     ]
                 },
-                html: '<math><mi>a</mi><mo>+</mo><mi>b</mi></math>',
+                html:       '<math><mi>a</mi><mo>+</mo><mi>b</mi></math>',
                 namespaces: mathmlNamespaces
             },
             {
-                name: 'a + c',
-                node: {
-                    tag: 'math',
+                name:       'a + c',
+                node:       {
+                    tag:      'math',
                     children: [
                         {tag: 'mi', children: 'a'},
                         {tag: 'mo', children: '+'},
                         {tag: 'mi', children: 'c'}
                     ]
                 },
-                html: '<math><mi>a</mi><mo>+</mo><mi>c</mi></math>',
+                html:       '<math><mi>a</mi><mo>+</mo><mi>c</mi></math>',
                 namespaces: mathmlNamespaces
             }
         ];
@@ -1421,85 +1434,85 @@ describe('cito.vdom', function () {
 
     var inputPropDefs = [
         {
-            name: 'input text',
-            node1: {tag: 'input', attrs: {value: 'val1'}},
-            node2: {tag: 'input', attrs: {value: 'val1'}},
-            prop: 'value',
+            name:   'input text',
+            node1:  {tag: 'input', attrs: {value: 'val1'}},
+            node2:  {tag: 'input', attrs: {value: 'val1'}},
+            prop:   'value',
             value1: 'val1', value2: 'val1'
         },
         {
-            name: 'input text change',
-            node1: {tag: 'input', attrs: {value: 'val1'}},
-            node2: {tag: 'input', attrs: {value: 'val2'}},
-            prop: 'value',
+            name:   'input text change',
+            node1:  {tag: 'input', attrs: {value: 'val1'}},
+            node2:  {tag: 'input', attrs: {value: 'val2'}},
+            prop:   'value',
             value1: 'val1', value2: 'val2'
         },
         {
-            name: 'input text external change',
-            node1: {tag: 'input', attrs: {value: 'val1'}},
-            node2: {tag: 'input', attrs: {value: 'val2'}},
-            prop: 'value',
+            name:   'input text external change',
+            node1:  {tag: 'input', attrs: {value: 'val1'}},
+            node2:  {tag: 'input', attrs: {value: 'val2'}},
+            prop:   'value',
             value1: 'val1', valueExt1: 'val in1', value2: 'val2'
         },
         {
-            name: 'textarea',
-            node1: {tag: 'textarea', attrs: {value: 'val1'}},
-            node2: {tag: 'textarea', attrs: {value: 'val2'}},
-            prop: 'value',
+            name:   'textarea',
+            node1:  {tag: 'textarea', attrs: {value: 'val1'}},
+            node2:  {tag: 'textarea', attrs: {value: 'val2'}},
+            prop:   'value',
             value1: 'val1', value2: 'val2'
         },
         {
-            name: 'textarea external change',
-            node1: {tag: 'textarea', attrs: {value: 'val1'}},
-            node2: {tag: 'textarea', attrs: {value: 'val2'}},
-            prop: 'value',
+            name:   'textarea external change',
+            node1:  {tag: 'textarea', attrs: {value: 'val1'}},
+            node2:  {tag: 'textarea', attrs: {value: 'val2'}},
+            prop:   'value',
             value1: 'val1', valueExt1: 'val in1', value2: 'val2'
         },
         {
-            name: 'checkbox',
-            node1: {tag: 'input', attrs: {type: 'checkbox', checked: false}},
-            node2: {tag: 'input', attrs: {type: 'checkbox', checked: true}},
-            prop: 'checked',
+            name:   'checkbox',
+            node1:  {tag: 'input', attrs: {type: 'checkbox', checked: false}},
+            node2:  {tag: 'input', attrs: {type: 'checkbox', checked: true}},
+            prop:   'checked',
             value1: false, value2: true
         },
         {
-            name: 'radio',
-            node1: {tag: 'input', attrs: {type: 'radio', checked: true}},
-            node2: {tag: 'input', attrs: {type: 'radio', checked: false}},
-            prop: 'checked',
+            name:   'radio',
+            node1:  {tag: 'input', attrs: {type: 'radio', checked: true}},
+            node2:  {tag: 'input', attrs: {type: 'radio', checked: false}},
+            prop:   'checked',
             value1: true, value2: false
         }
     ];
 
     var selectDefs = [
         {
-            name: 'option 1 selected',
-            node: {tag: 'select', children: [{tag: 'option', attrs: {value: 'opt1', selected: true}}, {tag: 'option', attrs: {value: 'opt2'}}]},
+            name:  'option 1 selected',
+            node:  {tag: 'select', children: [{tag: 'option', attrs: {value: 'opt1', selected: true}}, {tag: 'option', attrs: {value: 'opt2'}}]},
             props: {selectedIndex: 0, value: 'opt1'}
         },
         {
-            name: 'option 2 selected',
-            node: {tag: 'select', children: [{tag: 'option', attrs: {value: 'opt1'}}, {tag: 'option', attrs: {value: 'opt2', selected: true}}]},
+            name:  'option 2 selected',
+            node:  {tag: 'select', children: [{tag: 'option', attrs: {value: 'opt1'}}, {tag: 'option', attrs: {value: 'opt2', selected: true}}]},
             props: {selectedIndex: 1, value: 'opt2'}
         },
         {
-            name: 'selectedIndex 0',
-            node: {tag: 'select', attrs: {selectedIndex: 0}, children: [{tag: 'option', attrs: {value: 'opt1'}}, {tag: 'option', attrs: {value: 'opt2'}}]},
+            name:  'selectedIndex 0',
+            node:  {tag: 'select', attrs: {selectedIndex: 0}, children: [{tag: 'option', attrs: {value: 'opt1'}}, {tag: 'option', attrs: {value: 'opt2'}}]},
             props: {selectedIndex: 0, value: 'opt1'}
         },
         {
-            name: 'selectedIndex 1',
-            node: {tag: 'select', attrs: {selectedIndex: 1}, children: [{tag: 'option', attrs: {value: 'opt1'}}, {tag: 'option', attrs: {value: 'opt2'}}]},
+            name:  'selectedIndex 1',
+            node:  {tag: 'select', attrs: {selectedIndex: 1}, children: [{tag: 'option', attrs: {value: 'opt1'}}, {tag: 'option', attrs: {value: 'opt2'}}]},
             props: {selectedIndex: 1, value: 'opt2'}
         },
         {
-            name: 'value opt1',
-            node: {tag: 'select', attrs: {value: 'opt1'}, children: [{tag: 'option', attrs: {value: 'opt1'}}, {tag: 'option', attrs: {value: 'opt2'}}]},
+            name:  'value opt1',
+            node:  {tag: 'select', attrs: {value: 'opt1'}, children: [{tag: 'option', attrs: {value: 'opt1'}}, {tag: 'option', attrs: {value: 'opt2'}}]},
             props: {selectedIndex: 0, value: 'opt1'}
         },
         {
-            name: 'value opt2',
-            node: {tag: 'select', attrs: {value: 'opt2'}, children: [{tag: 'option', attrs: {value: 'opt1'}}, {tag: 'option', attrs: {value: 'opt2'}}]},
+            name:  'value opt2',
+            node:  {tag: 'select', attrs: {value: 'opt2'}, children: [{tag: 'option', attrs: {value: 'opt1'}}, {tag: 'option', attrs: {value: 'opt2'}}]},
             props: {selectedIndex: 1, value: 'opt2'}
         }
     ];
@@ -1507,23 +1520,27 @@ describe('cito.vdom', function () {
     var callbackEventDescs,
         customEventHandler;
     var nodeWithNestedEvents = {
-        tag: 'div',
-        events: {click: function (event) {
-            callbackEventDescs.push('click outer');
-            return customEventHandler && customEventHandler.call(this, event);
-        }},
+        tag:      'div',
+        events:   {
+            click: function (event) {
+                callbackEventDescs.push('click outer');
+                return customEventHandler && customEventHandler.call(this, event);
+            }
+        },
         children: {
-            tag: 'div',
-            events: {click: [
-                function (event) {
-                    callbackEventDescs.push('click inner 1');
-                    return customEventHandler && customEventHandler.call(this, event);
-                },
-                function (event) {
-                    callbackEventDescs.push('click inner 2');
-                    return customEventHandler && customEventHandler.call(this, event);
-                }
-            ]}
+            tag:    'div',
+            events: {
+                click: [
+                    function (event) {
+                        callbackEventDescs.push('click inner 1');
+                        return customEventHandler && customEventHandler.call(this, event);
+                    },
+                    function (event) {
+                        callbackEventDescs.push('click inner 2');
+                        return customEventHandler && customEventHandler.call(this, event);
+                    }
+                ]
+            }
         }
     };
 
@@ -1670,9 +1687,11 @@ describe('cito.vdom', function () {
     });
 
     var callbackEventTypes;
+
     function testEventHandler(event) {
         callbackEventTypes.push(event.type);
     }
+
     function testExceptionEventHandler(event) {
         callbackEventTypes.push(event.type);
         throw new Error();
@@ -1680,38 +1699,38 @@ describe('cito.vdom', function () {
 
     var eventDefs = [
         {
-            name: 'none',
-            node: {tag: 'div'},
+            name:   'none',
+            node:   {tag: 'div'},
             events: []
         },
         {
-            name: 'null',
-            node: {tag: 'div', events: null},
+            name:   'null',
+            node:   {tag: 'div', events: null},
             events: []
         },
         {
-            name: 'empty',
-            node: {tag: 'div', events: {}},
+            name:   'empty',
+            node:   {tag: 'div', events: {}},
             events: []
         },
         {
-            name: 'click one',
-            node: {tag: 'div', events: {click: testEventHandler}},
+            name:   'click one',
+            node:   {tag: 'div', events: {click: testEventHandler}},
             events: ['click']
         },
         {
-            name: 'click array two',
-            node: {tag: 'div', events: {click: [testEventHandler, testEventHandler]}},
+            name:   'click array two',
+            node:   {tag: 'div', events: {click: [testEventHandler, testEventHandler]}},
             events: ['click', 'click']
         },
         {
-            name: 'click one + mouseover one',
-            node: {tag: 'div', events: {click: testEventHandler, mouseover: testEventHandler}},
+            name:   'click one + mouseover one',
+            node:   {tag: 'div', events: {click: testEventHandler, mouseover: testEventHandler}},
             events: ['click', 'mouseover']
         },
         {
-            name: 'click exception + click exception',
-            node: {tag: 'div', events: {click: [testExceptionEventHandler, testExceptionEventHandler]}},
+            name:   'click exception + click exception',
+            node:   {tag: 'div', events: {click: [testExceptionEventHandler, testExceptionEventHandler]}},
             events: ['click', 'click']
         }
     ];
@@ -1721,7 +1740,7 @@ describe('cito.vdom', function () {
             var node, callbackEvent;
             beforeEach(function () {
                 node = cito.vdom.append(document.body, {
-                    tag: 'div',
+                    tag:    'div',
                     events: {
                         click: function (event) {
                             callbackEvent = event;
@@ -1799,7 +1818,7 @@ describe('cito.vdom', function () {
                     currentTargets.push(event.currentTarget);
                 };
                 dispatchEvent(node.dom.firstChild, createEvent('click'));
-                var domChild = node.children.dom,
+                var domChild               = node.children.dom,
                     expectedCurrentTargets = [domChild, domChild, node.dom];
                 expect(thises).to.eql(expectedCurrentTargets);
                 expect(currentTargets).to.eql(expectedCurrentTargets);
@@ -1898,6 +1917,20 @@ describe('cito.vdom', function () {
         });
     });
 
+    describe('vdom from node', function () {
+        it('create', function () {
+            var div = document.createElement('div');
+
+            div.className = 'css-class';
+            div.style.display = 'none';
+
+            var citoNode = cito.vdom.createFromNode(div);
+
+            expect(citoNode).to.have.property('tag', 'div');
+            expect(citoNode.dom).to.eqlDom('<div class="css-class" style="display:none;"></div>');
+        });
+    });
+
     if (document.registerElement) {
         var TestNormal = document.registerElement('test-normal', {
             prototype: Object.create(HTMLElement.prototype, {})
@@ -1973,18 +2006,20 @@ describe('cito.vdom', function () {
     function normNode(node) {
         if (_.isArray(node)) {
             return normNodes(node);
-        } else if (_.isString(node)) {
-            return {tag: '#', children: node};
         } else {
-            node = {tag: node.tag, children: node.children};
-            if (node.tag.match(/[a-z0-9]+/)) {
-                var children = node.children;
-                if (!_.isArray(children)) {
-                    children = children || _.isString(children) ? [children] : [];
+            if (_.isString(node)) {
+                return {tag: '#', children: node};
+            } else {
+                node = {tag: node.tag, children: node.children};
+                if (node.tag.match(/[a-z0-9]+/)) {
+                    var children = node.children;
+                    if (!_.isArray(children)) {
+                        children = children || _.isString(children) ? [children] : [];
+                    }
+                    node.children = _.map(children, normNode);
                 }
-                node.children = _.map(children, normNode);
+                return node;
             }
-            return node;
         }
     }
 
@@ -2005,13 +2040,15 @@ describe('cito.vdom', function () {
         var event;
         if (supportsEventConstructor) {
             event = new CustomEvent(type, {bubbles: true, cancelable: true, detail: detail});
-        } else if (document.createEvent) {
-            event = document.createEvent('CustomEvent');
-            event.initCustomEvent(type, true, true, detail);
         } else {
-            event = document.createEventObject();
-            event.type = type;
-            event.detail = detail;
+            if (document.createEvent) {
+                event = document.createEvent('CustomEvent');
+                event.initCustomEvent(type, true, true, detail);
+            } else {
+                event = document.createEventObject();
+                event.type = type;
+                event.detail = detail;
+            }
         }
         if (fixPreventDefault) {
             event.preventDefault = function () {
@@ -2052,14 +2089,16 @@ describe('cito.vdom', function () {
     function getHtml(value) {
         if (value && value.outerHTML) {
             return value.outerHTML;
-        } else if (value && value.nodeType) {
-            while (helperDiv.firstChild) {
-                helperDiv.removeChild(helperDiv.firstChild);
-            }
-            helperDiv.appendChild(value.cloneNode(true));
-            return helperDiv.innerHTML;
         } else {
-            return '' + value;
+            if (value && value.nodeType) {
+                while (helperDiv.firstChild) {
+                    helperDiv.removeChild(helperDiv.firstChild);
+                }
+                helperDiv.appendChild(value.cloneNode(true));
+                return helperDiv.innerHTML;
+            } else {
+                return '' + value;
+            }
         }
     }
 
@@ -2077,11 +2116,13 @@ describe('cito.vdom', function () {
                 var normedAttr;
                 if (attrMatch === '"') {
                     normedAttr = attrMatch[0]
-                } else if (attrMatch[3]) {
-                    var attrValue = (attrMatch[3] || attrMatch[2]).replace('"', "&quot;");
-                    normedAttr = attrMatch[1] + '="' + attrValue + '"';
                 } else {
-                    normedAttr = attrMatch[0];
+                    if (attrMatch[3]) {
+                        var attrValue = (attrMatch[3] || attrMatch[2]).replace('"', "&quot;");
+                        normedAttr = attrMatch[1] + '="' + attrValue + '"';
+                    } else {
+                        normedAttr = attrMatch[0];
+                    }
                 }
                 attrs.push(normedAttr);
             }
