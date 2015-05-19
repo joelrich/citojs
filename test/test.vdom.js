@@ -1898,6 +1898,20 @@ describe('cito.vdom', function () {
         });
     });
 
+    describe('vdom from DOM Node', function () {
+        it('create', function () {
+            var div = document.createElement('div');
+
+            div.className = 'css-class';
+            div.style.display = 'none';
+
+            var citoNode = cito.vdom.createFromNode(div);
+
+            expect(citoNode).to.have.property('tag', 'div');
+            expect(citoNode.dom).to.eqlDom('<div class="css-class" style="display:none;"></div>');
+        });
+    });
+
     if (document.registerElement) {
         var TestNormal = document.registerElement('test-normal', {
             prototype: Object.create(HTMLElement.prototype, {})
