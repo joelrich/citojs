@@ -1229,6 +1229,65 @@ var cito = window.cito || {};
         }
     }
 
+    function createCitoNode(tagName, attrs, children) {
+        var citoNode = {tag: tagName};
+
+        if (!_.isEmpty(attrs)) {
+            citoNode.attrs = attrs;
+        }
+
+        if (!_.isEmpty(children)) {
+            citoNode.children = children;
+        }
+
+        return citoNode;
+    }
+
+    function parseChildrenFromNode(node) {
+        var childNodes     = node.childNodes,
+            childrenLength = childNodes.length,
+            citoChildren   = [];
+
+        if (childrenLength === 0) {
+            return null;
+        } else if (childrenLength === 1) {
+            return createCitoNodeFromNode(childNodes[0]);
+        }
+
+        for (var i = 0, l = childNodes.length; i < l; ++i) {
+            var citoChildNode = createCitoNodeFromNode(childNodes[i]);
+
+            if (citoChildNode) {
+                citoChildren.push(citoChildNode);
+            }
+        }
+
+        return citoChildren;
+    }
+
+    function parseAttributesFromNode(node) {
+        var attrs = {},
+            nodeAttrs = node.attributes;
+
+        for (var i = 0, l = nodeAttrs.length; i < l; ++i) {
+            attrs[nodeAttrs[i].name] = nodeAttrs[i].value;
+        }
+
+        return attrs;
+    }
+
+    function createCitoNodeFromNode(node) {
+        if (!Object.prototype.hasOwnProperty.call(node, 'nodeType')) {
+            throw new Error('The given node must be type of Node');
+        }
+
+        return createCitoNode(
+            node.tagName.toLowerCase(),
+            parseAttributesFromNode(node),
+            parseChildrenFromNode(node)
+        );
+    }
+
     var vdom = cito.vdom = {
         create: function (node) {
             node = norm(node);
@@ -1255,6 +1314,10 @@ var cito = window.cito || {};
         remove: function (node) {
             var domParent = node.dom.parentNode;
             removeChild(domParent, node);
+        },
+        createFromNode: function (node) {
+            var citoNode = createCitoNodeFromNode(node);
+            return this.create(citoNode);
         }
     };
 
