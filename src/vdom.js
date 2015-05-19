@@ -1229,34 +1229,44 @@ var cito = window.cito || {};
         }
     }
 
-    function createCitoNode(tagName, attrs, children) {
-        var citoNode = {tag: tagName};
+    function isEmpty(obj) {
+        if (obj) {
+            var objectClass = obj.toString();
+            if (objectClass === '[object Object]') {
+                return Object.keys(obj).length === 0;
+            } else if (objectClass === '[object Array]') {
+                return obj.length;
+            }
 
-        if (!_.isEmpty(attrs)) {
-            citoNode.attrs = attrs;
+            throw new Error('Unsupported type ' + objectClass);
         }
 
-        if (!_.isEmpty(children)) {
+        return true;
+    }
+
+    function createCitoNode(tagName, attrs, children) {
+        var citoNode = {tag: tagName};
+        if (!isEmpty(attrs)) {
+            citoNode.attrs = attrs;
+        }
+        if (!isEmpty(children)) {
             citoNode.children = children;
         }
 
         return citoNode;
     }
 
-    function parseChildrenFromNode(node) {
+    function parseChildrenFromDOMNode(node) {
         var childNodes     = node.childNodes,
             childrenLength = childNodes.length,
             citoChildren   = [];
-
         if (childrenLength === 0) {
             return null;
         } else if (childrenLength === 1) {
-            return createCitoNodeFromNode(childNodes[0]);
+            return createCitoNodeFromDOMNode(childNodes[0]);
         }
-
         for (var i = 0, l = childNodes.length; i < l; ++i) {
-            var citoChildNode = createCitoNodeFromNode(childNodes[i]);
-
+            var citoChildNode = createCitoNodeFromDOMNode(childNodes[i]);
             if (citoChildNode) {
                 citoChildren.push(citoChildNode);
             }
@@ -1265,10 +1275,9 @@ var cito = window.cito || {};
         return citoChildren;
     }
 
-    function parseAttributesFromNode(node) {
+    function parseAttributesFromDOMNode(node) {
         var attrs = {},
             nodeAttrs = node.attributes;
-
         for (var i = 0, l = nodeAttrs.length; i < l; ++i) {
             attrs[nodeAttrs[i].name] = nodeAttrs[i].value;
         }
@@ -1276,15 +1285,15 @@ var cito = window.cito || {};
         return attrs;
     }
 
-    function createCitoNodeFromNode(node) {
+    function createCitoNodeFromDOMNode(node) {
         if (!Object.prototype.hasOwnProperty.call(node, 'nodeType')) {
-            throw new Error('The given node must be type of Node');
+            throw new Error('The given node must be a DOM Node (type of Node)');
         }
 
         return createCitoNode(
             node.tagName.toLowerCase(),
-            parseAttributesFromNode(node),
-            parseChildrenFromNode(node)
+            parseAttributesFromDOMNode(node),
+            parseChildrenFromDOMNode(node)
         );
     }
 
@@ -1315,8 +1324,8 @@ var cito = window.cito || {};
             var domParent = node.dom.parentNode;
             removeChild(domParent, node);
         },
-        createFromNode: function (node) {
-            var citoNode = createCitoNodeFromNode(node);
+        createFromDOMNode: function (node) {
+            var citoNode = createCitoNodeFromDOMNode(node);
             return this.create(citoNode);
         }
     };

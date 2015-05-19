@@ -1924,7 +1924,7 @@ describe('cito.vdom', function () {
             div.className = 'css-class';
             div.style.display = 'none';
 
-            var citoNode = cito.vdom.createFromNode(div);
+            var citoNode = cito.vdom.createFromDOMNode(div);
 
             expect(citoNode).to.have.property('tag', 'div');
             expect(citoNode.dom).to.eqlDom('<div class="css-class" style="display:none;"></div>');
