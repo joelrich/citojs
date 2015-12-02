@@ -1314,12 +1314,12 @@ var cito = window.cito || {};
       }
       var citoson = { tag: element.nodeName.toLowerCase(), attrs: {}, children: [] };
       var attrs = citoson.attrs, attributes = element.attributes, attributes_len = attributes.length;
-      for (var a=0; i<attributes_len; i++) {
+      for (var a=0; a<attributes_len; a++) {
         var attr = attributes[a];
         attrs[attr.name] = attr.value;
       }
       var children = citoson.children, childNodes = element.childNodes, childNodes_len = element.childNodes.length;
-      for (var c=0; i<childNodes_len; i++) {
+      for (var c=0; c<childNodes_len; c++) {
         var child = rec_dom2cito(childNodes[c]);
         if (child) children.push(child);
       }
