@@ -1,8 +1,16 @@
 {
   "name": "citojs",
   "version": "0.0.1",
+  "description": "cito.js is a JavaScript framework for building fast, scalable and modularized web applications",
   "author": "Joel Richard",
-  "license": "MPL 2.0",
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelrich/citojs"
+  },
+  "bugs": {
+    "url": "https://github.com/joelrich/citojs/issues"
+  },
   "devDependencies": {
     "closure-compiler": "^0.2.6",
     "gulp": "^3.8.10",
