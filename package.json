@@ -37,6 +37,7 @@
     "mocha": "^2.0.1"
   },
   "scripts": {
+    "build": "gulp",
     "test": "karma start --single-run"
   }
 }
