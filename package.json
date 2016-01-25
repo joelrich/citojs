@@ -11,6 +11,7 @@
   "bugs": {
     "url": "https://github.com/joelrich/citojs/issues"
   },
+  "main": "src/vdom.js",
   "devDependencies": {
     "closure-compiler": "^0.2.6",
     "gulp": "^3.8.10",
