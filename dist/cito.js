@@ -46,6 +46,10 @@
         return typeof value === 'function';
     }
 
+	function isEmptyTag(tag) {
+		return /br|hr|meta|link|base|img|embed|param|area|col|input/.test(tag);
+	}
+
     function norm(node, oldNode) {
         var type = typeof node;
         if (type === 'string') {
@@ -416,7 +420,7 @@
                 }
                 if (tag) {
                     // TODO close only required tags explicitly
-                    html += '</' + tag + '>';
+                    if (isEmptyTag(tag) === false) html += '</' + tag + '>';
                 }
                 return html;
         }
