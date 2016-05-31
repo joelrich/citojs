@@ -336,6 +336,9 @@
                 domNode = prevNode ? prevNode.nextSibling : domParent.firstChild;
             }
         } else {
+			if('|caption|colgroup|col|thead|tbody|tfoot|tr|th|td|'.indexOf('|' + node['tag'] + '|') > -1){
+				helperDiv = document.createElement('table');
+			}
             helperDiv.innerHTML = html;
             domNode = helperDiv.removeChild(helperDiv.firstChild);
         }
