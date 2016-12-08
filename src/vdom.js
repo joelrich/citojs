@@ -1272,6 +1272,32 @@
         remove: function (node) {
             var domParent = node.dom.parentNode;
             removeChild(domParent, node);
+        },
+        fromDOM: function CitoFromDOM(dom) {
+            if(dom.nodeName === "#text") return {tag: "#", children: dom.textContent}
+            if(dom.nodeName === "#cdata-section") return {tag: "#", children: dom.textContent}
+            if(dom.nodeName === "#comment") return {tag: "!", children: dom.textContent}
+            var res = {}
+            if(dom.tagName !== undefined) res.tag = dom.tagName
+            if(dom.attributes) {
+                var len = dom.attributes.length
+                var attrs = {}
+                for(var i = 0; i < len; i++) {
+                    var attr = dom.attributes[i]
+                    attrs[attr.name] = attr.value
+                }
+                if(len > 0) res.attrs = attrs
+            }
+            if(dom.childNodes){
+                var children = []
+                var len = dom.childNodes.length
+                for(var i = 0; i < len; i++){
+                    var child = dom.childNodes[i]
+                    children.push(CitoFromDOM(child))
+                }
+                if(len > 0) res.children = children
+            }
+            return res
         }
     };
 
