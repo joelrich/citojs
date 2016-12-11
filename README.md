@@ -1,3 +1,5 @@
+*The development of this library has stopped because of personal reasons. Please only use it for uncritical experiments. If you are interested to take ownership of it, you can send me an email to citojsweb@gmail.com.*
+
 # cito.js
 
 cito.js is a JavaScript framework for building fast, scalable and modularized web applications. The core consists of a virtual DOM library inspired by React/Mithril. On top of that, it will provide a component framework which will make it easy to build well-encapsulated components.
