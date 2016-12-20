@@ -252,6 +252,8 @@
                     default: ns = parentNs; break;
                 }
 
+                if(node.ns) ns = node.ns;
+                
                 var attrs = node.attrs,
                     is = attrs && attrs.is;
                 if (ns) {
