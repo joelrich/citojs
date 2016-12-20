@@ -46,6 +46,10 @@
         return typeof value === 'function';
     }
 
+	function isEmptyTag(tag) {
+		return /br|hr|meta|link|base|img|embed|param|area|col|input/.test(tag);
+	}
+
     function norm(node, oldNode) {
         var type = typeof node;
         if (type === 'string') {
@@ -332,6 +336,9 @@
                 domNode = prevNode ? prevNode.nextSibling : domParent.firstChild;
             }
         } else {
+			if('|caption|colgroup|col|thead|tbody|tfoot|tr|th|td|'.indexOf('|' + node['tag'] + '|') > -1){
+				helperDiv = document.createElement('table');
+			}
             helperDiv.innerHTML = html;
             domNode = helperDiv.removeChild(helperDiv.firstChild);
         }
@@ -416,7 +423,7 @@
                 }
                 if (tag) {
                     // TODO close only required tags explicitly
-                    html += '</' + tag + '>';
+                    if (isEmptyTag(tag) === false) html += '</' + tag + '>';
                 }
                 return html;
         }
