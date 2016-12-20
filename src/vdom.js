@@ -42,8 +42,14 @@
         return value instanceof Array;
     }
 
-    function isFunction(value) {
-        return typeof value === 'function';
+    // Avoid a Chakra JIT bug in compatibility modes of IE 11.
+    var isFunction = function (value) {
+        return typeof value === 'function' || false;
+    }
+    if (isFunction(/x/) || (Uint8Array && !isFunction(Uint8Array))) {
+        isFunction = function (value) {
+            return Object.prototype.toString.call(value) === '[object Function]';
+        };
     }
 
     function norm(node, oldNode) {
